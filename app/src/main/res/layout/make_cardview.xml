@@ -1,103 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/white">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/linearItem"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/cart" />
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/cart"/>
 
-        <TextView
-            android:id="@+id/card_one"
-            android:textColor="#000"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:textSize="9sp"
-            android:layout_toRightOf="@id/cart"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UUID :"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/uuid"
-            android:layout_margin="10dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/card_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="UUID        : "
+                    android:textSize="13sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/uuid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="uuid"
+                    android:textSize="13sp"
+                    android:textColor="@android:color/black"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/card_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="Weight    : "
+                    android:textSize="13sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="weight"
+                    android:textSize="13sp"
+                    android:textColor="@android:color/black"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/card_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="Distance : "
+                    android:textSize="13sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="distance"
+                    android:textSize="13sp"
+                    android:textColor="@android:color/black"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/expanded"
+        android:weightSum="2"
+        android:animateLayoutChanges="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/call"
             android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/card_one"
-            android:paddingLeft="20sp"
-            android:textSize="9sp"
-            android:text="UUID"
+            android:text="호출"
             />
 
-        <TextView
-            android:id="@+id/card_two"
+        <Button
+            android:id="@+id/stop"
             android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_below="@id/card_one"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@id/cart"
-            android:text="Weight :"
-            android:textColor="#000"
-            android:textSize="9sp"
-            android:textStyle="bold" />
+            android:text="일시정지"
+            />
 
-        <TextView
-            android:id="@+id/weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card_one"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@id/card_one"
-            android:paddingLeft="20sp"
-            android:text="Weight"
-            android:textSize="9sp" />
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/card_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card_two"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@id/cart"
-            android:text="Distance :"
-            android:textColor="#000"
-            android:textSize="9sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card_two"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@id/card_one"
-            android:paddingLeft="20sp"
-            android:text="Distance"
-            android:textSize="9sp" />
-
-    </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

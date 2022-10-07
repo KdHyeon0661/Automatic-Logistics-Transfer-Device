@@ -28,17 +28,19 @@ public class ChooseMode extends AppCompatActivity implements TabLayoutMediator.T
         titles = new ArrayList<String>();
         titles.add("BLE");
         titles.add("UWB");
-        setViewPagerAdapter();
+        titles.add("CONNECTED"); // 페이지 타이틀 추가
+        setViewPagerAdapter(); // 프래그먼트들 추가
         new TabLayoutMediator(tabLayout, viewPager2, this).attach();
     }
 
     public void setViewPagerAdapter() {
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this);
-        ArrayList<Fragment> fragmentList = new ArrayList<>(); //creates an ArrayList of Fragments
+        ArrayList<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new BlueTooth());
         fragmentList.add(new UWB());
-        viewPager2Adapter.setData(fragmentList); //sets the data for the adapter
-        viewPager2.setAdapter(viewPager2Adapter);
+        fragmentList.add(new Connected()); // 프래그먼트 추가
+        viewPager2Adapter.setData(fragmentList); // 뷰페이지 어댑터에 추가
+        viewPager2.setAdapter(viewPager2Adapter); // 뷰페이지에 어댑터를 추가. 반영됨
 
     }
 

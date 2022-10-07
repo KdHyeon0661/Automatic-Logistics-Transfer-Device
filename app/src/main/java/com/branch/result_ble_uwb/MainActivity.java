@@ -19,18 +19,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn_login = findViewById(R.id.btn_login);
-        Button btn_register = findViewById(R.id.btn_register);
-        EditText edit_id = findViewById(R.id.edit_id);
-        EditText edit_pw = findViewById(R.id.edit_pw);
+        Button btn_login = findViewById(R.id.loginButton);
+        Button btn_register = findViewById(R.id.joinButton);
+        EditText edit_id = findViewById(R.id.id);
+        EditText edit_pw = findViewById(R.id.pw);
 
         btn_login.setOnClickListener(v -> {
             String id = edit_id.getText().toString();
             String pw = edit_pw.getText().toString();
-            Log.d("VEX", id);
-            Log.d("VEX", pw);
 
-            if(id.equals("") && pw.equals("")){
+            if(id.equals("") && pw.equals("")){ // 아이디 일치 시 Toast 알람 후 페이지 이동
                 dialog("success");
                 Intent intent = new Intent(this, ChooseMode.class);
                 startActivity(intent);
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_register.setOnClickListener(v -> {
+        btn_register.setOnClickListener(v -> { // 회원가입 페이지로 이동
             Intent intent = new Intent(this, Register.class);
             startActivity(intent);
         });
