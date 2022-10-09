@@ -16,26 +16,25 @@
         android:id="@+id/id"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_above="@id/pw"
         android:layout_centerInParent="true"
-        android:hint="ID"
-        android:minHeight="48dp" />
+        android:layout_above="@id/password"
+        android:hint="email"/>
 
     <EditText
-        android:id="@+id/pw"
+        android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:hint="password"
         android:inputType="textPassword"
-        android:minHeight="48dp" />
+        android:hint="password"/>
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/pw"
+        android:layout_below="@+id/password"
         android:layout_margin="20dp"
         android:background="#ffffffff"
         android:text="로그인"/>
